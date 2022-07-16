@@ -1,9 +1,10 @@
-package com.kodilla.testing.weather.mock;                                     // [1]
+package com.kodilla.testing.weather.mock;
 
-import com.kodilla.testing.weather.stub.Temperatures;                         // [2]
-import com.kodilla.testing.weather.stub.WeatherForecast;                      // [3]
-import org.junit.jupiter.api.Assertions;                                      // [4]
-import org.junit.jupiter.api.Test;                                            // [5]
+import com.kodilla.testing.weather.stub.Temperatures;
+import com.kodilla.testing.weather.stub.WeatherForecast;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -16,8 +17,16 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class WeatherForecastTestSuite {
 
+    private static int testCounter = 0;
+
     @Mock
     private Temperatures temperaturesMock;
+
+    @BeforeEach
+    public void beforeEveryTest() {
+        testCounter++;
+        System.out.println("Preparing to execute test #" + testCounter);
+    }
 
     @Test
     void testCalculateForecastWithMock() {
