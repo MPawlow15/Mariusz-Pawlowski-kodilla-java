@@ -15,10 +15,6 @@ public class Country {
         return quantity;
     }
 
-    public BigDecimal getQuantity() {
-        return quantity;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
