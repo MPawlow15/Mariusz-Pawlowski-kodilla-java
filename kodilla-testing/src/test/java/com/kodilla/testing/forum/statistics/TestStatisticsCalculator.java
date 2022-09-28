@@ -124,6 +124,7 @@ public class TestStatisticsCalculator {
         assertEquals(100, statisticsCalculator.getUsersQty());
         assertEquals(0.2, statisticsCalculator.getPostsAvgPerUser(), 0.01);
         assertEquals(0.4, statisticsCalculator.getCommentsAvgPerUser(), 0.01);
+
     }
 }
 
