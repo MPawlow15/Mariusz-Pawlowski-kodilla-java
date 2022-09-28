@@ -43,7 +43,7 @@ public class FlightService {
     public List<Flight> findFlight(String from) {
 
         List<Flight> result = getAllFlights().stream()
-                .filter(a -> a.getDeparture() == from)
+                .filter(a -> a.getDeparture().equals(from))
                 .collect(Collectors.toList());
 
         result.stream()
@@ -55,7 +55,7 @@ public class FlightService {
     public List<Flight> findFlight1(String to) {
 
         List<Flight> result = getAllFlights().stream()
-                .filter(a -> a.getArrival() == to)
+                .filter(a -> a.getArrival().equals(to))
                 .collect(Collectors.toList());
 
         result.stream()
@@ -67,8 +67,8 @@ public class FlightService {
     public List<Flights> findFlight2(String from, String to) {
 
         List<Flights> result = getAllFlightsWithTransfers().stream()
-                .filter(a -> a.getDeparture() == from)
-                .filter(a -> a.getArrival() == to)
+                .filter(a -> a.getDeparture().equals(from))
+                .filter(a -> a.getArrival().equals(to))
                 .collect(Collectors.toList());
 
         result.stream()
