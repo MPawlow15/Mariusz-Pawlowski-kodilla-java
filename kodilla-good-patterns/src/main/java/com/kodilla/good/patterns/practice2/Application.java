@@ -6,10 +6,8 @@ public class Application {
 
         FlightService flightService = new FlightService();
 
-        flightService.findFlight("Berlin");
-        System.out.println("");
-        flightService.findFlight1("Prague");
-        System.out.println("");
-        flightService.findFlight2("Warsaw", "Berlin");
+        flightService.findFlightFrom("Berlin");
+        flightService.findFlightTo("Prague");
+        flightService.findFlightWithChange("Warsaw", "Berlin");
     }
 }

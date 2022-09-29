@@ -40,40 +40,25 @@ public class FlightService {
         return currentFlights;
     }
 
-    public List<Flight> findFlight(String from) {
+    public List<Flight> findFlightFrom(String from) {
 
-        List<Flight> result = getAllFlights().stream()
+        return getAllFlights().stream()
                 .filter(a -> a.getDeparture().equals(from))
                 .collect(Collectors.toList());
-
-        result.stream()
-                .forEach(System.out::println);
-
-        return result;
     }
 
-    public List<Flight> findFlight1(String to) {
+    public List<Flight> findFlightTo(String to) {
 
-        List<Flight> result = getAllFlights().stream()
+        return getAllFlights().stream()
                 .filter(a -> a.getArrival().equals(to))
                 .collect(Collectors.toList());
-
-        result.stream()
-                .forEach(System.out::println);
-
-        return result;
     }
 
-    public List<Flights> findFlight2(String from, String to) {
+    public List<Flights> findFlightWithChange(String from, String to) {
 
-        List<Flights> result = getAllFlightsWithTransfers().stream()
+        return getAllFlightsWithTransfers().stream()
                 .filter(a -> a.getDeparture().equals(from))
                 .filter(a -> a.getArrival().equals(to))
                 .collect(Collectors.toList());
-
-        result.stream()
-                .forEach(System.out::println);
-
-        return result;
     }
 }
