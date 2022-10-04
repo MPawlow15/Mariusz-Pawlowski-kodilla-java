@@ -45,8 +45,8 @@ public final class Library extends Prototype<Library>{
     @Override
     public String toString() {
         return "Library{" +
-                "name='" + name + '\'' +
-                ", books=" + books +
+                "name = " + name + '\'' +
+                ", books = " + books +
                 '}';
     }
 }
