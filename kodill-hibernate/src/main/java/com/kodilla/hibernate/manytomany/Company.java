@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.companySearch",
+        name = "Company.retrieveCompaniesWithFirst3Letters",
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME,1,3) = :BEGINSWITH",
+        resultClass = Company.class
+)
+
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesWithNamesContaining",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :ARG",
         resultClass = Company.class
 )
 

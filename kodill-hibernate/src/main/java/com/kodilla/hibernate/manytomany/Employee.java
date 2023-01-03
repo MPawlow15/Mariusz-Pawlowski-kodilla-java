@@ -6,9 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedQuery(
-        name = "Employee.searchByName",
+        name = "Employee.retrieveEmployeesWithLastname",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+
+@NamedNativeQuery(
+        name = "Employee.retrieveEmployeesWithFirstnamesContaining",
+        query = "SELECT * FROM EMPLOYEES WHERE FIRSTNAME LIKE :ARG",
+        resultClass = Employee.class
+)
+
+@NamedNativeQuery(
+        name = "Employee.retrieveEmployeesWithLastnamesContaining",
+        query = "SELECT * FROM EMPLOYEES WHERE LASTNAME LIKE :ARG",
+        resultClass = Employee.class
+)
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -17,6 +30,7 @@ public class Employee {
     private String firstname;
     private String lastname;
     private List<Company> companies = new ArrayList<>();
+
     public Employee() {
     }
 
